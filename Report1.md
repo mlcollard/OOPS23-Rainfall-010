@@ -193,10 +193,8 @@ index 3b0651c..57decdb 100644
 ```
 
 % diff oracle/rainfall.cpp rainfall.cpp
-lstat /Users/collard/Library/Mobile Documents/com~apple~CloudDocs/ClassS23/Rainfall-01-12-2023-12-32-52/oracle/rainfall.cpp: no such file or directory
 
 ```diff
-diff: /Source/rainfalloracle.cpp: No such file or directory
 ```
 
 ## git checkout 382944
@@ -273,9 +271,6 @@ index 57decdb..0a3469a 100644
 % diff oracle/rainfall.cpp rainfall.cpp
 
 ```diff
-34a35,36
-> 
->     return 0;
 ```
 
 ## git checkout 280e43
@@ -383,35 +378,6 @@ index 0a3469a..e855a9a 100644
 % diff oracle/rainfall.cpp rainfall.cpp
 
 ```diff
-12,13d11
-< using namespace std;
-< 
-15c13
-<     vector<float> rainfall;
----
->     std::vector<float> rainfall;
-17c15
-<     while (cin >> n) {
----
->     while (std::cin >> n) {
-21c19
-<         cout << "Error: no rainfall data";
----
->         std::cout << "Error: no rainfall data";
-26c24
-<     for (vector<float>::size_type i = 1; i < rainfall.size(); ++i) {
----
->     for (std::vector<float>::size_type i = 1; i < rainfall.size(); ++i) {
-31,34c29,32
-<     cout << "| Hourly Rainfall | Inches in 100s |" << '\n';
-<     cout << "|:----------------|----------------|" << '\n';
-<     cout << "| Average         |     " << left << setw(10) << fixed << setprecision(2) << (t / rainfall.size()) << " |" << '\n';
-<     cout << "| Heaviest        |     " << left << setw(10) << m << " |" << '\n';
----
->     std::cout << "| Hourly Rainfall | Inches in 100s |" << '\n';
->     std::cout << "|:----------------|----------------|" << '\n';
->     std::cout << "| Average         |     " << std::left << std::setw(10) << std::fixed << std::setprecision(2) << (t / rainfall.size()) << " |" << '\n';
->     std::cout << "| Heaviest        |     " << std::left << std::setw(10) << m << " |" << '\n';
 ```
 
 ## git checkout 89f12f
@@ -490,10 +456,6 @@ index e855a9a..01c22e2 100644
 % diff oracle/rainfall.cpp rainfall.cpp
 
 ```diff
-19c19
-<         std::cout << "Error: no rainfall data";
----
->         std::cerr << "Error: no rainfall data";
 ```
 
 
