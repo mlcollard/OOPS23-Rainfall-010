@@ -10,6 +10,18 @@
 #include <iterator>
 #include <vector>
 
+// maximum of the data
+double max(const std::vector<double>& data) {
+
+    auto maximum = data[0];
+    for (const auto value: data) {
+        if (value > maximum)
+            maximum = value;
+    }
+
+    return maximum;
+}
+
 int main() {
 
     // input hourly rainfall data
@@ -21,11 +33,7 @@ int main() {
     }
 
     // calculate heaviest rainfall
-    auto heaviest = rainfall[0];
-    for (const auto rain: rainfall) {
-        if (rain > heaviest)
-            heaviest = rain;
-    }
+    auto heaviest = max(rainfall);
 
     // calculate average rainfall
     auto total = 0.0;
